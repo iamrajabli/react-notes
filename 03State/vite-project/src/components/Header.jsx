@@ -46,6 +46,14 @@ export default class Header extends React.Component {
         localStorage.setItem('data', JSON.stringify(arr));
     }
 
+    componentDidMount() {
+        console.log('Component did mount');
+    }
+
+    componentDidUpdate() {
+        console.log('component did update');
+    }
+
     render() {
         return (
             <div>
