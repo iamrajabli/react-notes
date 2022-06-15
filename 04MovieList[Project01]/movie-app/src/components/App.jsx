@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
+import axios from 'axios';
 
 export default class App extends React.Component {
     constructor() {
@@ -14,13 +15,43 @@ export default class App extends React.Component {
     };
 
     async componentDidMount() {
-        const req = await fetch('http://localhost:3001/movies');
+        const res = await axios.get('http://localhost:3001/movies');
+        this.setState({ movies: await res.data });
+    };
 
-        this.setState({ movies: await req.json() })
-    }
+
+    // deleteItem = (movie) => {
+    //     const newMovieList = this.state.movies.filter(
+    //         m => m.id !== movie.id
+    //     );
+
+    //     this.setState(() => (
+    //         { movies: newMovieList }
+    //     ));
+    // }
 
 
-    deleteItem = (movie) => {
+    // FETCH DELETE
+    // deleteItem =  async (movie) => {
+
+    //     await fetch(`http://localhost:3001/movies/${movie.id}`, {
+    //         method: "DELETE"
+    //     });
+
+    //     const newMovieList = this.state.movies.filter(
+    //         m => m.id !== movie.id
+    //     );
+
+    //     this.setState(() => (
+    //         { movies: newMovieList }
+    //     ));
+    // }
+
+    // AXIOS DELETE
+    deleteItem =  async (movie) => {
+
+        await axios.delete(`http://localhost:3001/movies/${movie.id}`);
+
         const newMovieList = this.state.movies.filter(
             m => m.id !== movie.id
         );
