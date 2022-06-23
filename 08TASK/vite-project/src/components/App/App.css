@@ -1,0 +1,74 @@
+@import url('reset.css');
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list__item {
+    width: 400px;
+    border:1px solid gray;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border:1px solid rgb(204, 204, 204);
+}
+
+.list__left, .list__right {
+    min-height: 100vh;
+    width: 400px;
+
+}
+
+.list__item__left {
+    width: 200px;
+}
+.list__item img{
+    width: inherit;
+    height: 200px;
+}
+
+.list__item h1 {
+    font-size: 20px;
+}
+.list__item p {
+    font-size: 16px;
+}
+
+.list__item__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+.list__right {
+    border:1px solid green;
+    position: relative;
+    background-color: rgb(170, 170, 170);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.total {
+  
+    width: 100%;
+    background-color: black;
+    color:white;
+    padding: 10px;
+    box-sizing: border-box;
+  
+}
